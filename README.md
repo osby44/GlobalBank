@@ -46,6 +46,8 @@ Global Bank wants to visualize how the loan approval rate has evolved to answer 
 
 Branch managers want to be alerted to any real-estate transactions over $250,000. To do this, we created a table visualization on the mortgage application page for pending mortgage applications that are yet to be processed, adding the application dates and transaction amount to the Value field, and a visual alert added.
 
+![Screenshot (100)](https://github.com/osby44/GlobalBank/assets/141450625/a84b695a-179f-46b4-879b-65bc24229f3f)
+
 ### Branch Performance page
 
 ***Visualization 5***
@@ -64,13 +66,19 @@ Global Bank wants to visualize the relative performance of its branches in terms
 
 A ribbon-chart visualization was added to the page to visualize the relative performance of the branches as a ranking according to mortgage applications received from customers. Application date was added to the X Axis, the branch number to Legend, and the number of mortgages to the Y axis.
 
+![Screenshot (87)](https://github.com/osby44/GlobalBank/assets/141450625/59436f2c-1c40-4859-8768-35950ddb1b59)
+
 ### Customer List Page
 
 A “Show customer list” page with a table visualization to display a list of all the applications per branch and the transaction totals.
 
+![Screenshot (88)](https://github.com/osby44/GlobalBank/assets/141450625/2ffd4e7d-733a-4946-b37e-035d8bd6a7a9)
+
 ### Customer Indicators page
 
 A Customer Indicators page to monitor the make-up of the borrower portfolio and to zoom in on individual borrowers’ (or potential borrowers’) profiles. A table visualization was added on this page to show this, adding the Customer Number, Number of applications, Customer Transaction total and Customer date of birth, to the Value field.
+
+![Screenshot (89)](https://github.com/osby44/GlobalBank/assets/141450625/63a272e8-f3bf-4a23-a69f-dbe1483026e0)
 
 ## Data Modeling 
 
@@ -123,3 +131,6 @@ Here is the resulting formula that was used to calculate the borrower score:
 Borrower_score = IF(LOOKUPVALUE('Family Status'[Customer Age],'Family Status'[Customer_ID],'Mortgage Applications'[Customer #])>=82,"REJECTED",IF(LOOKUPVALUE('Pro  Status'[Income Regularity],'Pro  Status'[Customer #],'Mortgage Applications'[Customer #])== "3 : Very irregular","REJECTED",IF(([Loan Amount]/'Mortgage Applications'[Duration])>LOOKUPVALUE('Pro  Status'[Average Monthly Income],'Pro  Status'[Customer #],'Mortgage Applications'[Customer #])/(3+LOOKUPVALUE('Family Status'[Number of Dependent Children],'Family Status'[Customer_ID],'Mortgage Applications'[Customer #])),"REJECTED","APPROVED")))
 
 
+Click [here](https://app.powerbi.com/links/Hj1raqeI9i?ctid=3922f60b-e8a2-4862-9142-e8910c694245&pbi_source=linkShare) to view the report in Power BI
+
+### Reference: Open Classrooms (Creating Dashboards with Power BI)
